@@ -8,20 +8,35 @@ var fs =  require('fs');
 var _ = require('underscore');
 var app = express();
 var bodyParser = require('body-parser');
+var React = require('react');
 
 var port = 8080;
 var env = process.env.NODE_ENV || 'development';
+
+//This is for pre rendering jsx to index.html
+require("node-jsx").install();
+var data = {
+  location: require('./app/locales/en/location.json'),
+  speakers: require('./app/locales/en/speakers.json'),
+  partners: require('./app/locales/en/partners.json'),
+  schedule: require('./app/locales/en/schedule.json'),
+  registration: require('./app/locales/en/registration.json'),
+  overview: require('./app/locales/en/mainInfo.json'),
+  footer: require('./app/locales/en/footer.json')
+}
+var outHtml = React.renderToString( React.createElement( require('./app/scripts/modules/BasicLayout.js'), data));
+
 var appEnvData = {
   version: appData.version,
   env: env,
-  head_commit: "null"
+  head_commit: "null",
+  reactOutput: outHtml
 }
+
 var date_opts =  {
   year: 'numeric', month: 'numeric', day: 'numeric',
   hour: 'numeric', minute: 'numeric', second: 'numeric'
 };
-
-require("node-jsx").install();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

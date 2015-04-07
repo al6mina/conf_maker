@@ -13,7 +13,7 @@ var OverviewBlock = React.createClass({
   mixins: [IntlMixin],
   getInitialState: function(){
     return {
-      mainInfo: []
+      mainInfo: this.props.inf
     }
   },
   componentDidMount: function() {
@@ -49,13 +49,13 @@ var Overview = React.createClass({
             </div>
             <div className="overview__infoData overview__infoData--when">
               <span>
-                <FormattedDate 
-                  value={new Date(this.props.mainInfo.start_date)} 
+                <FormattedDate
+                  value={new Date(this.props.mainInfo.start_date)}
                   day="numeric"
                   month="long"
                   year="numeric" /><br/>
-                <FormattedTime 
-                  value={new Date(this.props.mainInfo.start_date)} 
+                <FormattedTime
+                  value={new Date(this.props.mainInfo.start_date)}
                   hour="numeric"
                   minute="numeric" />
               </span>

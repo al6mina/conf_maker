@@ -43,12 +43,12 @@ var config = (function() {
       },
       {
         title: 'schedule',
-        isRendering: true,
+        isRendering: false,
         order: 2
       },
       {
         title: 'location',
-        isRendering: true,
+        isRendering: false,
         order: 3
       },
       {

@@ -22,7 +22,6 @@ var Menu = React.createClass({
     var targetY = anchor.offsetTop - menuHeight;
 
     scrollTo(targetY, 300);
-    // animate(document.body, 'scrollTop', '', startY, targetY, 350, true);
   },
 
   render: function() {
@@ -59,28 +58,6 @@ var Menu = React.createClass({
     );
   }
 });
-
-//fix menu when scrolling os make static due to window.pageYOffset
-window.onscroll = function() {
-  var menu = document.getElementById('menu');
-  var header = document.getElementById('header');
-  var overview = document.querySelector('#menu + section');
-  var pageScroll = window.pageYOffset;
-  var menuStyle = menu.style;
-  var manuHeight = menu.offsetHeight;
-  var headerHeight = header.offsetHeight;
-
-  if (pageScroll >= headerHeight) {
-    menuStyle.position = 'fixed';
-    menuStyle.width = '100%';
-    menuStyle.top = '0';
-    menuStyle.left = '0';
-    overview.style.paddingTop = menu.offsetHeight + 'px';
-  } else {
-    menuStyle.position = 'relative';
-    overview.style.paddingTop = '0px';
-  }
-};
 
 function scrollTo(to, duration) {
   if (duration < 0) {

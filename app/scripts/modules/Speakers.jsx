@@ -9,8 +9,8 @@ var SocialIcon = require('../components/socials.jsx');
 var Speakers = React.createClass({
   getInitialState: function() {
     return {
-      speakerInfo: [],
-      header: ''
+      speakerInfo: this.props.inf.data,
+      header: this.props.inf.title
     }
   },
   componentDidMount: function() {

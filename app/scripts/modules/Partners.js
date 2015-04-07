@@ -17,8 +17,8 @@ var Partners = React.createClass({
 
   getInitialState: function() {
     return {
-      categories: [],
-      title: ''
+      categories: this.props.inf.data,
+      header: this.props.inf.title
     }
   },
 

@@ -8,10 +8,10 @@ var SocialIcon = require('../components/socials.jsx');
 var Footer = React.createClass({
   getInitialState: function() {
     return ({
-      events: [],
-      networks:{},
-      mail:'',
-      locales:{}
+      events: this.props.inf.data.events,
+      networks: this.props.inf.data.socials.networks,
+      mail: this.props.inf.data.socials.email,
+      locales: this.props.inf.locales
     });
   },
   componentDidMount: function() {
@@ -28,6 +28,7 @@ var Footer = React.createClass({
   render: function() {
     return (
       <footer id="footer" className="page-wrap footer">
+        <h1> { this.props.name } </h1>
         <div className="footer__container">
           <CommunityEvents events={this.state.events} locales={this.state.locales} />
           <Connection networks={this.state.networks} mail={this.state.mail} locales={this.state.locales} />

@@ -27,12 +27,12 @@ var LayoutBasic = React.createClass({
     });
 
     var moduleList = {
-      location: <LocationMap key="LocationMap" />,
-      speakers: <Speakers key="Speakers" />,
-      partners: <Partners key="Partners" />,
-      schedule: <Schedule key="Schedule" />,
-      registration: <Registration key="Registration" />,
-      overview: <Overview key="Overview" />
+      location: <LocationMap key="LocationMap" inf={this.props.location} />,
+      speakers: <Speakers key="Speakers" inf={this.props.speakers} />,
+      partners: <Partners key="Partners" inf={this.props.partners} />,
+      schedule: <Schedule key="Schedule" inf={this.props.schedule} />,
+      registration: <Registration key="Registration" inf={this.props.registration} />,
+      overview: <Overview key="Overview" inf={this.props.overview} />
     };
 
     var modulesToRender = confModules.map(function(item) {
@@ -46,7 +46,7 @@ var LayoutBasic = React.createClass({
 
         {modulesToRender}
 
-        <Footer />
+        <Footer inf={this.props.footer} />
       </div>
     );
   }

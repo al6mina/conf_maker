@@ -34,8 +34,27 @@ var Registration = React.createClass({
   },
   getInitialState: function() {
     return ({
-      inputFields: [],
-      title: ''
+      inputFields: [
+      {
+        type:'name',
+        pattern:/^[a-zA-Z_ -]{3,50}$/,
+        placeholder: this.props.inf.Name_placeHolder,
+        errorMessage: this.props.inf.Name_err
+      },
+      {
+        type:'email',
+        pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+        placeholder: this.props.inf.Email_placeHolder,
+        errorMessage: this.props.inf.Email_err
+      },
+      {
+        type:'phone',
+        pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
+        placeholder: this.props.inf.Phone_placeHolder,
+        errorMessage: this.props.inf.Phone_err
+      }
+    ],
+      title: this.props.inf.title
     });
   },
 
