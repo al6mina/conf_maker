@@ -16,11 +16,15 @@ var OverviewBlock = React.createClass({
       mainInfo: this.props.inf
     }
   },
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
-      this.setState({mainInfo: JSON.parse(data)});
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   if (this.props) {
+  //     this.setState({mainInfo: this.props.inf});
+  //   } else {
+  //     utilities.ajax('get', config.pathJSON('mainInfo'), function(data) {
+  //       this.setState({mainInfo: JSON.parse(data)});
+  //     }.bind(this));
+  //   }
+  // },
   render: function() {
     var conferenceInfo = this.state.mainInfo.map(function(info){
       return <Overview mainInfo={info} key={info.name}/>

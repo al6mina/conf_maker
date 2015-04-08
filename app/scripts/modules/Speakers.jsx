@@ -13,15 +13,15 @@ var Speakers = React.createClass({
       header: this.props.inf.title
     }
   },
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('speakers'), function(data) {
-      var temp = JSON.parse(data)
-      this.setState({
-        speakerInfo: temp.data,
-        header: temp.title
-        });
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   utilities.ajax('get', config.pathJSON('speakers'), function(data) {
+  //     var temp = JSON.parse(data)
+  //     this.setState({
+  //       speakerInfo: temp.data,
+  //       header: temp.title
+  //       });
+  //   }.bind(this));
+  // },
   render: function() {
     var speakers = this.state.speakerInfo.map(function(info) {
       return <Speaker key={info.name} information={info} />
