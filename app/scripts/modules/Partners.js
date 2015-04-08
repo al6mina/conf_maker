@@ -5,15 +5,15 @@ var config = require('../config');
 var utilities = require('../utilities');
 
 var Partners = React.createClass({
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('partners'), function(data) {
-      var temp = JSON.parse(data);
-      this.setState({
-        categories: temp.data,
-        header: temp.title
-      });
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   utilities.ajax('get', config.pathJSON('partners'), function(data) {
+  //     var temp = JSON.parse(data);
+  //     this.setState({
+  //       categories: temp.data,
+  //       header: temp.title
+  //     });
+  //   }.bind(this));
+  // },
 
   getInitialState: function() {
     return {

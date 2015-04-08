@@ -5,33 +5,33 @@ var config = require('../config');
 var utilities = require('../utilities');
 
 var Registration = React.createClass({
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('registration'), function(data) {
-       var temp = JSON.parse(data);
-       this.setState({
-         inputFields: [
-         {
-           type:'name',
-           pattern:/^[a-zA-Z_ -]{3,50}$/,
-           placeholder: temp.Name_placeHolder,
-           errorMessage: temp.Name_err
-         },
-         {
-           type:'email',
-           pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
-           placeholder: temp.Email_placeHolder,
-           errorMessage: temp.Email_err
-         },
-         {
-           type:'phone',
-           pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
-           placeholder: temp.Phone_placeHolder,
-           errorMessage: temp.Phone_err
-         }
-       ],
-       title: temp.title});
-     }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   utilities.ajax('get', config.pathJSON('registration'), function(data) {
+  //      var temp = JSON.parse(data);
+  //      this.setState({
+  //        inputFields: [
+  //        {
+  //          type:'name',
+  //          pattern:/^[a-zA-Z_ -]{3,50}$/,
+  //          placeholder: temp.Name_placeHolder,
+  //          errorMessage: temp.Name_err
+  //        },
+  //        {
+  //          type:'email',
+  //          pattern:/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*([,;]\s*\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)*/,
+  //          placeholder: temp.Email_placeHolder,
+  //          errorMessage: temp.Email_err
+  //        },
+  //        {
+  //          type:'phone',
+  //          pattern:/^([0-9\(\)\/\+ \-]{3,20})$/,
+  //          placeholder: temp.Phone_placeHolder,
+  //          errorMessage: temp.Phone_err
+  //        }
+  //      ],
+  //      title: temp.title});
+  //    }.bind(this));
+  // },
   getInitialState: function() {
     return ({
       inputFields: [

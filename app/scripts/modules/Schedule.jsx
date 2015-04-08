@@ -18,15 +18,15 @@ var Schedule = React.createClass({
       locales: this.props.inf.locales
     }
   },
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('schedule'), function(data) {
-      var temp = JSON.parse(data);
-      this.setState({
-        conferences: temp.data,
-        locales: temp.locales,
-        });
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   utilities.ajax('get', config.pathJSON('schedule'), function(data) {
+  //     var temp = JSON.parse(data);
+  //     this.setState({
+  //       conferences: temp.data,
+  //       locales: temp.locales,
+  //       });
+  //   }.bind(this));
+  // },
   render: function() {
     var conferences = this.state.conferences.map(function(conference) {
       return <Conference key={conference.name} days={conference.days}

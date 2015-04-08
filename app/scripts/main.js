@@ -14,19 +14,24 @@ var intlData = {
   'locales': 'en-US'
 };
 
-var data = {
-  location: utilities.ajax('get', config.pathJSON('location'), function(data) { return JSON.parse(data);}),
-  speakers: utilities.ajax('get', config.pathJSON('speakers'), function(data) { return JSON.parse(data);}),
-  partners: utilities.ajax('get', config.pathJSON('partners'), function(data) { return JSON.parse(data);}),
-  schedule: utilities.ajax('get', config.pathJSON('schedule'), function(data) { return JSON.parse(data);}),
-  registration: utilities.ajax('get', config.pathJSON('registration'), function(data) { return JSON.parse(data);}),
-  overview: utilities.ajax('get', config.pathJSON('mainInfo'), function(data) { return JSON.parse(data);}),
-  footer: utilities.ajax('get', config.pathJSON('footer'), function(data) { return JSON.parse(data);})
-}
-
 var App = React.createClass({
   mixins: [IntlMixin],
   render: function() {
+    var confModules = [];
+
+    config.modules.map(function(item) {
+      if (item.isRendering) {
+        confModules.splice(item.order, 0, item.title);
+      }
+    });
+
+    var data = {};
+
+    confModules.map(function(item) {
+      utilities.ajax('get', config.pathJSON(item), function(dataRecieved) {
+        data[item] = JSON.parse(dataRecieved);
+      });
+    });
     return (
         <BasicLayout data={data}/>
     )

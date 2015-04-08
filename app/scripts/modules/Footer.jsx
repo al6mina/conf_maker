@@ -14,17 +14,17 @@ var Footer = React.createClass({
       locales: this.props.inf.locales
     });
   },
-  componentDidMount: function() {
-    utilities.ajax('get', config.pathJSON('footer'), function(data) {
-      var temp = JSON.parse(data);
-      this.setState({
-        events: temp.data.events,
-        networks: temp.data.socials.networks,
-        mail: temp.data.socials.email,
-        locales: temp.locales
-      });
-    }.bind(this));
-  },
+  // componentDidMount: function() {
+  //   utilities.ajax('get', config.pathJSON('footer'), function(data) {
+  //     var temp = JSON.parse(data);
+  //     this.setState({
+  //       events: temp.data.events,
+  //       networks: temp.data.socials.networks,
+  //       mail: temp.data.socials.email,
+  //       locales: temp.locales
+  //     });
+  //   }.bind(this));
+  // },
   render: function() {
     return (
       <footer id="footer" className="page-wrap footer">

@@ -17,7 +17,7 @@ var data = {
   partners: require('./app/locales/en/partners.json'),
   schedule: require('./app/locales/en/schedule.json'),
   registration: require('./app/locales/en/registration.json'),
-  overview: require('./app/locales/en/mainInfo.json'),
+  overview: require('./app/locales/en/overview.json'),
   footer: require('./app/locales/en/footer.json')
 }
 
