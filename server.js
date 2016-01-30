@@ -4,7 +4,6 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var compress = require('compression');
 var express = require('express');
-var ci = require('./simpleCI');
 var app = express();
 
 var port = process.env.port || 8080;
@@ -20,8 +19,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(compress());
 app.use(express.static(path.join(__dirname, 'dist')));
 app.use(express.static('views/index.html'));
-// listens to payloads from github
-app.use('/github-payload', ci);
 
 app.set('view engine', 'html');
 app.engine('html', require('ejs').renderFile);
