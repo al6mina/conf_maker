@@ -7,6 +7,6 @@ node_modules
 dist/*
 
 	views/bundle.js
-	views/images/
-	views/locales/
+	views/images
+	views/locales
 	views/styles.css
