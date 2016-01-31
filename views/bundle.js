@@ -24665,9 +24665,9 @@
 	  render: function () {
 	    var link = this.props.array.map(function (item) {
 
-	      var style = '({background-image: url(../../' + item.img + ')})';
+	      var style = '({background-image: url(' + item.img + ')})';
 
-	      return React.createElement('a', { href: item.link, title: item.title, style: { backgroundImage: 'url(../../' + item.img + ')' },
+	      return React.createElement('a', { href: item.link, title: item.title, style: { backgroundImage: 'url(' + item.img + ')' },
 	        className: 'partners__item-link', key: item.title, target: '_blank' });
 	    });
 	    return React.createElement(
