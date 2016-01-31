@@ -72,8 +72,9 @@ var LocalConnect = {
   get: function(path, next) {
     // strip 'modules' from path becasue we dont have such locally
     var filePath = '/' + path.replace('modules/', '');
-    var file = (config.localePath + filePath + '.json');
 
+    var file = (config.localePath + filePath + '.json');
+   
     utilities.ajax('get', file, next);
   },
   push: function(callBack, obj) {

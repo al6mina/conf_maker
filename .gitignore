@@ -5,3 +5,8 @@ node_modules
 *.css.map
 
 dist/*
+
+	views/bundle.js
+	views/images/
+	views/locales/
+	views/styles.css

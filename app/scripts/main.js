@@ -8,6 +8,8 @@ var BasicLayout = require('./modules/BasicLayout');
 var ReactIntl = require('react-intl');
 var IntlMixin = ReactIntl.IntlMixin;
 
+require('../styles/styles.scss');
+
 var intlData = {
   'locales': 'en-US'
 };

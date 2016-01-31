@@ -39,6 +39,7 @@ var Partners = React.createClass({
   }
 });
 
+
 var PartnerCategory = React.createClass({
   render: function() {
     return (
@@ -53,7 +54,9 @@ var PartnerCategory = React.createClass({
 var PartnerLink = React.createClass({
   render: function() {
     var link = this.props.array.map(function(item) {
+
       var style = '({background-image: url(' + item.img + ')})';
+
       return (
         <a href={item.link} title={item.title} style={{backgroundImage: 'url(' + item.img + ')'}}
         className="partners__item-link" key={item.title} target="_blank">
