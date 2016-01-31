@@ -14,7 +14,7 @@ var utilities = require('../utilities');
 var ReactIntl = require('react-intl');
 var IntlMixin = ReactIntl.IntlMixin;
 var files = require('../db_connector');
-
+require('../../styles/styles.scss');
 var LayoutBasic = React.createClass({
   mixins: [IntlMixin],
   getInitialState: function() {

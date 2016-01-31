@@ -13,6 +13,14 @@ var userLang = 'en'; // set for testing purposes
 var locale = ~availableLocales.indexOf(userLang) ? userLang : defLang;
 
 var config = {
+  google: {
+    coordinates: {
+      lat: 49.842721,
+      lng: 24.000630
+    },
+    calndrClientId: '910713467721-pnujab5h8bbnaqhorpen6c8s1qp3sclf.apps.googleusercontent.com',
+    mapsAPIKey: 'AIzaSyC1b4B9v4bfOsDHrPk6u8ryB0j7tXGK6MU'
+  },
   firebasePath: 'https://blistering-fire-6843.firebaseio.com',
   mongoLab: {
     baseURL: 'https://api.mongolab.com/api/1/databases/conf_maker/collections/',
@@ -36,58 +44,22 @@ var config = {
   },
   modules: [
     {
-      title: {
-        en: 'overview',
-        uk: 'огляд'
-      },
-      component: 'overview',
-      isRendering: true,
-      order: 0
+      component: 'overview'
     },
     {
-      title: {
-        en: 'speakers',
-        uk: 'доповідачі'
-      },
-      component: 'speakers',
-      isRendering: true,
-      order: 1
+      component: 'speakers'
     },
     {
-      title: {
-        en: 'schedule',
-        uk: 'розклад'
-      },
-      component: 'schedule',
-      isRendering: true,
-      order: 2
+      component: 'schedule'
     },
     {
-      title: {
-        en: 'locations',
-        uk: 'локація'
-      },
-      component: 'location',
-      isRendering: true,
-      order: 3
+      component: 'location'
     },
     {
-      title: {
-        en: 'registration',
-        uk: 'реєстрація'
-      },
-      component: 'registration',
-      isRendering: true,
-      order: 4
+      component: 'registration'
     },
     {
-      title: {
-        en: 'partners',
-        uk: 'партнери'
-      },
-      component: 'partners',
-      isRendering: true,
-      order: 5
+      component: 'partners'
     }
   ],
   breakPoint: 768
