@@ -242,3 +242,4 @@ var Session = React.createClass({
 });
 
 module.exports = Schedule;
+
