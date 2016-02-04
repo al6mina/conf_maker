@@ -8,10 +8,8 @@ require('es6-promise').polyfill()
 
 module.exports = {
 	context:  __dirname + '\\app',
-  	entry: [
-    
-    './scripts/main'
-    ],
+  	entry: './scripts/main',
+  
   	output: {
     	filename: 'bundle.js',
     	path: __dirname + '\\views'
@@ -34,12 +32,12 @@ module.exports = {
 		   loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
 		},
     	
-	      { test: /\.(eot|woff|woff2)(\?\S*)?$/,
+	      { test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
          loader: 'url?limit=100000&name=[path][name].[ext]?[hash]'
 
     	},
 
-    	{test:/\.(json|ttf|svg|png|jpe?g|gif)$/, loader:'file?name=[path][name].[ext]'},
+    	{test:/\.(json)$/, loader:'file?name=[path][name].[ext]'},
    
 		]
 	},
@@ -48,7 +46,7 @@ module.exports = {
 		new ExtractTextPlugin('styles.css', {allChunks: true, disable: process.env.NODE_ENV=='development'}),
 		new CopyWebpackPlugin([
 			{ from:  './locales', to:  'locales' },
-			{ from:  './images', to:  'images' },
+		
 			]),
 	],
 //   stats: {
