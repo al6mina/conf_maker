@@ -51,6 +51,16 @@ module.exports = {
 			{ from:  './images', to:  'images' },
 			]),
 	],
+//   stats: {
+//   // Config for minimal console.log mess.
+//   assets: false,
+//   colors: true,
+//   version: false,
+//   hash: false,
+//   timings: true,
+//   chunks: false,
+//   chunkModules: false
+// },
 
 	devServer: {
 		host:'localhost',
